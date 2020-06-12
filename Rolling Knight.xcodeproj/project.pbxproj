@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD6F199524933AC6005AE9B8 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F199424933AC6005AE9B8 /* MenuScene.swift */; };
 		CD9FE1CF2490CA3300E94C72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */; };
 		CD9FE1D12490CA3300E94C72 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1D02490CA3300E94C72 /* GameScene.sks */; };
 		CD9FE1D32490CA3300E94C72 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1D22490CA3300E94C72 /* Actions.sks */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD6F199424933AC6005AE9B8 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		CD9FE1CB2490CA3300E94C72 /* Rolling Knight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rolling Knight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD9FE1D02490CA3300E94C72 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -41,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD6F199224933A1A005AE9B8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CD9FE1D42490CA3300E94C72 /* GameScene.swift */,
+				CD6F199424933AC6005AE9B8 /* MenuScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CD6F199324933A2F005AE9B8 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD9FE1D62490CA3300E94C72 /* GameViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		CD9FE1C22490CA3300E94C72 = {
 			isa = PBXGroup;
 			children = (
@@ -63,8 +82,8 @@
 				CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */,
 				CD9FE1D02490CA3300E94C72 /* GameScene.sks */,
 				CD9FE1D22490CA3300E94C72 /* Actions.sks */,
-				CD9FE1D42490CA3300E94C72 /* GameScene.swift */,
-				CD9FE1D62490CA3300E94C72 /* GameViewController.swift */,
+				CD6F199224933A1A005AE9B8 /* Scenes */,
+				CD6F199324933A2F005AE9B8 /* View Controller */,
 				CD9FE1D82490CA3300E94C72 /* Main.storyboard */,
 				CD9FE1DB2490CA3400E94C72 /* Assets.xcassets */,
 				CD9FE1DD2490CA3400E94C72 /* LaunchScreen.storyboard */,
@@ -147,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9FE1D52490CA3300E94C72 /* GameScene.swift in Sources */,
+				CD6F199524933AC6005AE9B8 /* MenuScene.swift in Sources */,
 				CD9FE1D72490CA3300E94C72 /* GameViewController.swift in Sources */,
 				CD9FE1CF2490CA3300E94C72 /* AppDelegate.swift in Sources */,
 			);
