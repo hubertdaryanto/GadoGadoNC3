@@ -219,7 +219,7 @@ class Level1: SKScene {
     {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = Level1(fileNamed: "Level 1") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -275,8 +275,21 @@ class Level1: SKScene {
     func backToHomeAbisMati()
     {
         removeChildren(in: [soundNode])
-     let homeScene = MenuScene(size: view!.bounds.size)
-     view!.presentScene(homeScene)
+    if let view = self.view as! SKView? {
+         // Load the SKScene from 'GameScene.sks'
+         if let scene = HomeScene(fileNamed: "HomeScene") {
+             // Set the scale mode to scale to fit the window
+             scene.scaleMode = .aspectFill
+             
+             // Present the scene
+             view.presentScene(scene)
+         }
+         
+         view.ignoresSiblingOrder = true
+         
+         view.showsFPS = true
+         view.showsNodeCount = true
+     }
         gameOver = false
      }
     

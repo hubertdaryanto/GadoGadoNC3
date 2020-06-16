@@ -211,7 +211,7 @@ class Level5: SKScene {
     {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = Level5(fileNamed: "Level 5") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
