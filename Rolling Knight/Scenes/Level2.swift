@@ -11,31 +11,25 @@ import GameplayKit
 import CoreMotion
 
 
-
-
-class GameScene: SKScene {
-    var enemy1lives = 3
-    var ememy2lives = 2
+class Level2: SKScene {
     var playerlives = 3
+    var pegangkunci1: Bool = false
+    var doorisopened = false
     let soundNode = SKAudioNode(fileNamed: "deadSound.m4a")
-    let enemy1 = SKSpriteNode(imageNamed: "Enemy")
-    var dummyplayer: SKSpriteNode!
+    let soundNode2 = SKAudioNode(fileNamed: "swordUse.m4a")
+    let soundNode3 = SKAudioNode(fileNamed: "heartbeatSound.m4a")
+    let soundNode4 = SKAudioNode(fileNamed: "doorSound.m4a")
+    var player: SKSpriteNode!
     var health1: SKSpriteNode!
     var health2: SKSpriteNode!
     var health3: SKSpriteNode!
     var pauseButton: SKSpriteNode!
-    let enemy2 = SKSpriteNode(imageNamed: "Enemy")
-    let potion = SKSpriteNode(imageNamed: "Potion")
     let resumeButton = SKSpriteNode(imageNamed: "Play Button")
     let restartButton = SKSpriteNode(imageNamed: "restart_test")
     let backToHomeButton = SKSpriteNode(imageNamed: "backtohome_test")
-    var tembok1: SKSpriteNode!
-    var tembok2: SKSpriteNode!
-    var jarum1: SKSpriteNode!
+    var tembok: SKSpriteNode!
     var pintu1: SKSpriteNode!
-    var kunci1: SKSpriteNode!
-    
-    var pegangkunci1: Bool = false
+    var pintu2: SKSpriteNode!
     var gameIsPaused: Bool = false
     var gameOver: Bool = false
     var motionManager = CMMotionManager()
@@ -43,18 +37,15 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         setupMotionManager()
-        spawnEnemy()
-        spawnPotion()
-        dummyplayer = (childNode(withName: "Dummy Player") as! SKSpriteNode)
+        playerlives = 3
+        player = (childNode(withName: "Player") as! SKSpriteNode)
         health1 = (childNode(withName: "Health 1") as! SKSpriteNode)
         health2 = (childNode(withName: "Health 2") as! SKSpriteNode)
         health3 = (childNode(withName: "Health 3") as! SKSpriteNode)
-        tembok1 = (childNode(withName: "tembok 1") as! SKSpriteNode)
-        tembok2 = (childNode(withName: "tembok 2") as! SKSpriteNode)
-        jarum1 = (childNode(withName: "jarum 1") as! SKSpriteNode)
+        tembok = (childNode(withName: "tembok") as! SKSpriteNode)
         pintu1 = (childNode(withName: "pintu 1") as! SKSpriteNode)
+        pintu2 = (childNode(withName: "pintu 2") as! SKSpriteNode)
         pauseButton = (childNode(withName: "PauseButton") as! SKSpriteNode)
-        kunci1 = (childNode(withName: "kunci 1") as! SKSpriteNode)
         physicsWorld.contactDelegate = self
     }
     
@@ -72,60 +63,11 @@ class GameScene: SKScene {
                 
                 DispatchQueue.main.async {
                     self.updateBallLocation(data)
-                    self.updateEnemy1Function(data)
                 }
             }
         }
     }
     
-    func spawnPotion()
-    {
-        potion.zPosition = 2
-        potion.setScale(1)
-        potion.name = "potion"
-        let physicsBody2 = SKPhysicsBody(texture: potion.texture!, size: potion.size)
-        physicsBody2.affectedByGravity = false
-        physicsBody2.allowsRotation = false
-        physicsBody2.isDynamic = false
-        physicsBody2.categoryBitMask = PhysicsCategory.potion
-        potion.physicsBody = physicsBody2
-        let x = CGFloat.random(in: -400...400)
-        let y = CGFloat.random(in: -800...800)
-        potion.position = CGPoint(x: 300, y: -300)
-        
-        addChild(potion)
-    }
-    
-    func spawnEnemy()
-    {
-        
-        enemy1.position = CGPoint(x: 400, y: 300)
-        enemy1.zPosition = 2
-        enemy1.scale(to: CGSize(width: 200, height: 200))
-        let physicsBody1 = SKPhysicsBody(circleOfRadius: enemy1.size.width / 2)
-        physicsBody1.affectedByGravity = false
-        physicsBody1.allowsRotation = false
-        physicsBody1.isDynamic = true
-        physicsBody1.categoryBitMask = PhysicsCategory.enemy
-        physicsBody1.collisionBitMask = 0b11111111111111111111111111111111
-        physicsBody1.contactTestBitMask = 0b11111111111111111111111111111111
-        enemy1.physicsBody = physicsBody1
-        addChild(enemy1)
-        
-        enemy2.position = CGPoint(x: 400, y: 100)
-        enemy2.zPosition = 2
-        enemy2.name = "enemy2"
-        enemy2.scale(to: CGSize(width: 200, height: 200))
-        let physicsBody2 = SKPhysicsBody(circleOfRadius: enemy2.size.width / 2)
-        physicsBody2.affectedByGravity = false
-        physicsBody2.allowsRotation = false
-        physicsBody2.isDynamic = true
-        physicsBody2.categoryBitMask = PhysicsCategory.enemy
-        physicsBody2.mass = 1.0
-        enemy2.physicsBody = physicsBody2
-        addChild(enemy2)
-        
-    }
     
     func setupPauseScreen()
        {
@@ -163,13 +105,7 @@ class GameScene: SKScene {
         addChild(backToHomeButton)
     }
     
-    func updateEnemy1Function(_ motionData: CMDeviceMotion)
-    {
-        var moveX = CGFloat(motionData.attitude.pitch * 100)
-        var moveY = CGFloat(motionData.attitude.roll * 100)
-        enemy1.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
-        
-    }
+
     
     func mental(object1: SKSpriteNode, object2: SKSpriteNode)
     {
@@ -191,7 +127,7 @@ class GameScene: SKScene {
         var moveX = CGFloat(motionData.attitude.pitch * 500)
         var moveY = CGFloat(motionData.attitude.roll * 500)
         
-        dummyplayer.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
+        player.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
         
         //move the ball visually limitation (ok lah, ini nanti aja)
 //        let currentLocation = dummyplayer.position
@@ -203,17 +139,6 @@ class GameScene: SKScene {
         
     }
     
-    func touchDown(atPoint pos : CGPoint) {
-
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-     
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-       
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
@@ -287,7 +212,7 @@ class GameScene: SKScene {
     {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = Level2(fileNamed: "Level 2") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -307,7 +232,7 @@ class GameScene: SKScene {
         soundNode.removeFromParent()
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene = Level2(fileNamed: "Level 2") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -343,8 +268,21 @@ class GameScene: SKScene {
     func backToHomeAbisMati()
     {
         removeChildren(in: [soundNode])
-     let homeScene = MenuScene(size: view!.bounds.size)
-     view!.presentScene(homeScene)
+     if let view = self.view as! SKView? {
+         // Load the SKScene from 'GameScene.sks'
+         if let scene = HomeScene(fileNamed: "HomeScene") {
+             // Set the scale mode to scale to fit the window
+             scene.scaleMode = .aspectFill
+             
+             // Present the scene
+             view.presentScene(scene)
+         }
+         
+         view.ignoresSiblingOrder = true
+         
+         view.showsFPS = true
+         view.showsNodeCount = true
+     }
         gameOver = false
      }
     
@@ -359,54 +297,12 @@ class GameScene: SKScene {
     }
 }
 
-extension GameScene: SKPhysicsContactDelegate{
+extension Level2: SKPhysicsContactDelegate{
     func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if contactMask == PhysicsCategory.player | PhysicsCategory.enemy {
-            if playerlives > 0
-            {
-                if playerlives == 3
-                {
-                    playerlives = playerlives - 1
-                    health3.isHidden = true
-                }
-                else if playerlives == 2
-                {
-                    playerlives = playerlives - 1
-                    health2.isHidden = true
-                }
-                else if playerlives == 1
-                {
-                    playerlives = playerlives - 1
-                    health1.isHidden = true
-                }
-                print("player kena enemy")
-                let node2 = contact.bodyA.node?.name == "Dummy Player" ? contact.bodyA.node : contact.bodyB.node
-                if let node = contact.bodyA.node?.name == "enemy2" ? contact.bodyA.node : contact.bodyB.node
-                {
-                    
-                }
-                if let node = contact.bodyA.node?.name == "enemy1" ? contact.bodyA.node : contact.bodyB.node
-                {
-                    enemy1lives = enemy1lives - 1
-                    if enemy1lives == 0
-                    {
-                        node.run(SKAction.sequence(
-                        [SKAction.wait(forDuration: 0.5), SKAction.removeFromParent()]
-                         ))
-                    }
-                    else
-                    {
-                        mental(object1: (node2) as! SKSpriteNode, object2: (node) as! SKSpriteNode)
-                    }
-                }
-            }
-            else
-            {
-                print("yah meninggal")
-                gameover()
-            }
+            
         }
         else if contactMask == PhysicsCategory.player | PhysicsCategory.potion
         {
@@ -463,35 +359,27 @@ extension GameScene: SKPhysicsContactDelegate{
         else if contactMask == PhysicsCategory.enemy | PhysicsCategory.jarum
         {
             print("enemy kena jarum")
-            if let node = contact.bodyA.node?.name == "enemy1" ? contact.bodyA.node : contact.bodyB.node
-            {
-                enemy1lives = enemy1lives - 1
-                if enemy1lives == 0
-                {
-                    node.run(SKAction.sequence(
-                    [SKAction.wait(forDuration: 0.5), SKAction.removeFromParent()]
-                     ))
-                }
-                
-            }
-            if let node = contact.bodyA.node?.name == "enemy2" ? contact.bodyA.node : contact.bodyB.node
-            {
-                
-            }
         }
         else if contactMask == PhysicsCategory.player | PhysicsCategory.pintu
         {
             print("player buka pintu")
-            if let node = contact.bodyA.node?.name == "pintu 1" ? contact.bodyA.node : contact.bodyB.node
+            if let node = contact.bodyA.node?.name == "pintu 2" ? contact.bodyA.node : contact.bodyB.node
             {
                 if pegangkunci1
                 {
-                    pintu1.texture = SKTexture(imageNamed: "DoorOpen(key)")
-                    pintu1.physicsBody = nil
+                    pintu2.texture = SKTexture(imageNamed: "DoorOpen(key)")
+                    pintu2.physicsBody = nil
+                    soundNode4.autoplayLooped = false
+                    if doorisopened == false
+                    {
+                    addChild(soundNode4)
+                    doorisopened = true
+                    }
+                    soundNode4.run(SKAction.play())
                 }
             }
             
-//            if let node = contact.bodyA.node?.name == "pintu 2" ? contact.bodyA.node : contact.bodyB.node
+//            if let node = contact.bodyA.node?.name == "pintu 1" ? contact.bodyA.node : contact.bodyB.node
 //            {
 //
 //                    print("ada yang menghilang")
@@ -513,7 +401,6 @@ extension GameScene: SKPhysicsContactDelegate{
         else if contactMask == PhysicsCategory.player | PhysicsCategory.kunci
         {
             print("player ambil kunci")
-
             if let node = contact.bodyA.node?.name == "kunci 1" ? contact.bodyA.node : contact.bodyB.node
             {
                     node.run(SKAction.sequence(
@@ -522,5 +409,24 @@ extension GameScene: SKPhysicsContactDelegate{
                 pegangkunci1 = true
             }
         }
+        else if contactMask == PhysicsCategory.player | PhysicsCategory.goal
+        {
+            if let view = self.view as! SKView? {
+                // Load the SKScene from 'GameScene.sks'
+                if let scene = Level3(fileNamed: "Level 3") {
+                    // Set the scale mode to scale to fit the window
+                    scene.scaleMode = .aspectFill
+                    
+                    // Present the scene
+                    view.presentScene(scene)
+                }
+                
+                view.ignoresSiblingOrder = true
+                
+                view.showsFPS = true
+                view.showsNodeCount = true
+            }
+        }
     }
 }
+
