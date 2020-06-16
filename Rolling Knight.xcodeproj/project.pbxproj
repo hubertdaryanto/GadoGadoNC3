@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2F128A24986DCA00E88E19 /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F128924986DCA00E88E19 /* Level1.swift */; };
+		CD2F128C249870B900E88E19 /* Level 2.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD2F128B249870B900E88E19 /* Level 2.sks */; };
+		CD2F128E249870C900E88E19 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F128D249870C900E88E19 /* Level2.swift */; };
+		CD2F1292249879AE00E88E19 /* Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F1291249879AE00E88E19 /* Level3.swift */; };
+		CD2F129424987A6800E88E19 /* Level 3.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD2F129324987A6800E88E19 /* Level 3.sks */; };
+		CD2F12962498833600E88E19 /* Level 4.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD2F12952498833600E88E19 /* Level 4.sks */; };
+		CD2F12982498857D00E88E19 /* Level 5.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD2F12972498857D00E88E19 /* Level 5.sks */; };
+		CD54A1D2249887490079FE44 /* Level 6.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD54A1D1249887490079FE44 /* Level 6.sks */; };
+		CD54A1D424988AA30079FE44 /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD54A1D324988AA30079FE44 /* Level4.swift */; };
+		CD54A1D624988C3C0079FE44 /* Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD54A1D524988C3C0079FE44 /* Level5.swift */; };
+		CD54A1D824988C8F0079FE44 /* Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD54A1D724988C8F0079FE44 /* Level6.swift */; };
 		CD6F199524933AC6005AE9B8 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F199424933AC6005AE9B8 /* MenuScene.swift */; };
 		CD9FE1CF2490CA3300E94C72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */; };
 		CD9FE1D12490CA3300E94C72 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1D02490CA3300E94C72 /* GameScene.sks */; };
@@ -16,9 +27,31 @@
 		CD9FE1DA2490CA3300E94C72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1D82490CA3300E94C72 /* Main.storyboard */; };
 		CD9FE1DC2490CA3400E94C72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1DB2490CA3400E94C72 /* Assets.xcassets */; };
 		CD9FE1DF2490CA3400E94C72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1DD2490CA3400E94C72 /* LaunchScreen.storyboard */; };
+		CDCA06A12497CA750083C195 /* doorSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDCA069D2497CA740083C195 /* doorSound.m4a */; };
+		CDCA06A22497CA750083C195 /* swordUse.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDCA069E2497CA740083C195 /* swordUse.m4a */; };
+		CDCA06A32497CA750083C195 /* hearbeatSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDCA069F2497CA750083C195 /* hearbeatSound.m4a */; };
+		CDCA06A42497CA750083C195 /* deadSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CDCA06A02497CA750083C195 /* deadSound.m4a */; };
+		CDCD0390249857890096E7BE /* HomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CDCD038F249857890096E7BE /* HomeScene.sks */; };
+		CDCD0394249861AE0096E7BE /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD0393249861AE0096E7BE /* HomeScene.swift */; };
+		CDCD0396249864310096E7BE /* OptionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CDCD0395249864310096E7BE /* OptionScene.sks */; };
+		CDCD0398249864460096E7BE /* MissonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CDCD0397249864460096E7BE /* MissonScene.sks */; };
+		CDCD039A249864580096E7BE /* MissionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD0399249864580096E7BE /* MissionScene.swift */; };
+		CDCD039E249864830096E7BE /* OptionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD039D249864830096E7BE /* OptionScene.swift */; };
+		CDCD03A02498691D0096E7BE /* Level 1.sks in Resources */ = {isa = PBXBuildFile; fileRef = CDCD039F2498691D0096E7BE /* Level 1.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD2F128924986DCA00E88E19 /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
+		CD2F128B249870B900E88E19 /* Level 2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level 2.sks"; sourceTree = "<group>"; };
+		CD2F128D249870C900E88E19 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
+		CD2F1291249879AE00E88E19 /* Level3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3.swift; sourceTree = "<group>"; };
+		CD2F129324987A6800E88E19 /* Level 3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level 3.sks"; sourceTree = "<group>"; };
+		CD2F12952498833600E88E19 /* Level 4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level 4.sks"; sourceTree = "<group>"; };
+		CD2F12972498857D00E88E19 /* Level 5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level 5.sks"; sourceTree = "<group>"; };
+		CD54A1D1249887490079FE44 /* Level 6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level 6.sks"; sourceTree = "<group>"; };
+		CD54A1D324988AA30079FE44 /* Level4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
+		CD54A1D524988C3C0079FE44 /* Level5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level5.swift; sourceTree = "<group>"; };
+		CD54A1D724988C8F0079FE44 /* Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6.swift; sourceTree = "<group>"; };
 		CD6F199424933AC6005AE9B8 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		CD9FE1CB2490CA3300E94C72 /* Rolling Knight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rolling Knight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +63,17 @@
 		CD9FE1DB2490CA3400E94C72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD9FE1DE2490CA3400E94C72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD9FE1E02490CA3400E94C72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCA069D2497CA740083C195 /* doorSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = doorSound.m4a; sourceTree = "<group>"; };
+		CDCA069E2497CA740083C195 /* swordUse.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = swordUse.m4a; sourceTree = "<group>"; };
+		CDCA069F2497CA750083C195 /* hearbeatSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hearbeatSound.m4a; sourceTree = "<group>"; };
+		CDCA06A02497CA750083C195 /* deadSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = deadSound.m4a; sourceTree = "<group>"; };
+		CDCD038F249857890096E7BE /* HomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HomeScene.sks; sourceTree = "<group>"; };
+		CDCD0393249861AE0096E7BE /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		CDCD0395249864310096E7BE /* OptionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionScene.sks; sourceTree = "<group>"; };
+		CDCD0397249864460096E7BE /* MissonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MissonScene.sks; sourceTree = "<group>"; };
+		CDCD0399249864580096E7BE /* MissionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionScene.swift; sourceTree = "<group>"; };
+		CDCD039D249864830096E7BE /* OptionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScene.swift; sourceTree = "<group>"; };
+		CDCD039F2498691D0096E7BE /* Level 1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level 1.sks"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +90,17 @@
 		CD6F199224933A1A005AE9B8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CD54A1D724988C8F0079FE44 /* Level6.swift */,
+				CD54A1D524988C3C0079FE44 /* Level5.swift */,
+				CD54A1D324988AA30079FE44 /* Level4.swift */,
 				CD9FE1D42490CA3300E94C72 /* GameScene.swift */,
 				CD6F199424933AC6005AE9B8 /* MenuScene.swift */,
+				CDCD0393249861AE0096E7BE /* HomeScene.swift */,
+				CDCD0399249864580096E7BE /* MissionScene.swift */,
+				CDCD039D249864830096E7BE /* OptionScene.swift */,
+				CD2F128924986DCA00E88E19 /* Level1.swift */,
+				CD2F128D249870C900E88E19 /* Level2.swift */,
+				CD2F1291249879AE00E88E19 /* Level3.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -79,8 +132,9 @@
 		CD9FE1CD2490CA3300E94C72 /* Rolling Knight */ = {
 			isa = PBXGroup;
 			children = (
+				CDCA069C2497CA580083C195 /* Audio */,
 				CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */,
-				CD9FE1D02490CA3300E94C72 /* GameScene.sks */,
+				CDCD038E2498576E0096E7BE /* Sks File */,
 				CD9FE1D22490CA3300E94C72 /* Actions.sks */,
 				CD6F199224933A1A005AE9B8 /* Scenes */,
 				CD6F199324933A2F005AE9B8 /* View Controller */,
@@ -90,6 +144,34 @@
 				CD9FE1E02490CA3400E94C72 /* Info.plist */,
 			);
 			path = "Rolling Knight";
+			sourceTree = "<group>";
+		};
+		CDCA069C2497CA580083C195 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA06A02497CA750083C195 /* deadSound.m4a */,
+				CDCA069D2497CA740083C195 /* doorSound.m4a */,
+				CDCA069F2497CA750083C195 /* hearbeatSound.m4a */,
+				CDCA069E2497CA740083C195 /* swordUse.m4a */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		CDCD038E2498576E0096E7BE /* Sks File */ = {
+			isa = PBXGroup;
+			children = (
+				CD54A1D1249887490079FE44 /* Level 6.sks */,
+				CD2F12972498857D00E88E19 /* Level 5.sks */,
+				CD2F12952498833600E88E19 /* Level 4.sks */,
+				CD2F129324987A6800E88E19 /* Level 3.sks */,
+				CD9FE1D02490CA3300E94C72 /* GameScene.sks */,
+				CDCD038F249857890096E7BE /* HomeScene.sks */,
+				CDCD0395249864310096E7BE /* OptionScene.sks */,
+				CDCD0397249864460096E7BE /* MissonScene.sks */,
+				CDCD039F2498691D0096E7BE /* Level 1.sks */,
+				CD2F128B249870B900E88E19 /* Level 2.sks */,
+			);
+			path = "Sks File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,10 +232,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2F129424987A6800E88E19 /* Level 3.sks in Resources */,
+				CDCA06A22497CA750083C195 /* swordUse.m4a in Resources */,
+				CDCD0398249864460096E7BE /* MissonScene.sks in Resources */,
+				CDCD03A02498691D0096E7BE /* Level 1.sks in Resources */,
+				CDCD0390249857890096E7BE /* HomeScene.sks in Resources */,
+				CDCA06A42497CA750083C195 /* deadSound.m4a in Resources */,
+				CD2F12962498833600E88E19 /* Level 4.sks in Resources */,
+				CD2F12982498857D00E88E19 /* Level 5.sks in Resources */,
+				CDCD0396249864310096E7BE /* OptionScene.sks in Resources */,
+				CDCA06A12497CA750083C195 /* doorSound.m4a in Resources */,
 				CD9FE1DA2490CA3300E94C72 /* Main.storyboard in Resources */,
+				CD2F128C249870B900E88E19 /* Level 2.sks in Resources */,
+				CD54A1D2249887490079FE44 /* Level 6.sks in Resources */,
 				CD9FE1D12490CA3300E94C72 /* GameScene.sks in Resources */,
 				CD9FE1DC2490CA3400E94C72 /* Assets.xcassets in Resources */,
 				CD9FE1DF2490CA3400E94C72 /* LaunchScreen.storyboard in Resources */,
+				CDCA06A32497CA750083C195 /* hearbeatSound.m4a in Resources */,
 				CD9FE1D32490CA3300E94C72 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,9 +260,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD54A1D624988C3C0079FE44 /* Level5.swift in Sources */,
+				CD54A1D824988C8F0079FE44 /* Level6.swift in Sources */,
+				CD2F1292249879AE00E88E19 /* Level3.swift in Sources */,
+				CD2F128E249870C900E88E19 /* Level2.swift in Sources */,
+				CD2F128A24986DCA00E88E19 /* Level1.swift in Sources */,
 				CD9FE1D52490CA3300E94C72 /* GameScene.swift in Sources */,
+				CD54A1D424988AA30079FE44 /* Level4.swift in Sources */,
+				CDCD039E249864830096E7BE /* OptionScene.swift in Sources */,
 				CD6F199524933AC6005AE9B8 /* MenuScene.swift in Sources */,
 				CD9FE1D72490CA3300E94C72 /* GameViewController.swift in Sources */,
+				CDCD039A249864580096E7BE /* MissionScene.swift in Sources */,
+				CDCD0394249861AE0096E7BE /* HomeScene.swift in Sources */,
 				CD9FE1CF2490CA3300E94C72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
