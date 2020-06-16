@@ -18,6 +18,7 @@
 		CD54A1D424988AA30079FE44 /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD54A1D324988AA30079FE44 /* Level4.swift */; };
 		CD54A1D624988C3C0079FE44 /* Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD54A1D524988C3C0079FE44 /* Level5.swift */; };
 		CD54A1D824988C8F0079FE44 /* Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD54A1D724988C8F0079FE44 /* Level6.swift */; };
+		CD54A1DB2498B4F00079FE44 /* Germania.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD54A1DA2498B4F00079FE44 /* Germania.otf */; };
 		CD6F199524933AC6005AE9B8 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F199424933AC6005AE9B8 /* MenuScene.swift */; };
 		CD9FE1CF2490CA3300E94C72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */; };
 		CD9FE1D12490CA3300E94C72 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CD9FE1D02490CA3300E94C72 /* GameScene.sks */; };
@@ -52,6 +53,7 @@
 		CD54A1D324988AA30079FE44 /* Level4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
 		CD54A1D524988C3C0079FE44 /* Level5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level5.swift; sourceTree = "<group>"; };
 		CD54A1D724988C8F0079FE44 /* Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6.swift; sourceTree = "<group>"; };
+		CD54A1DA2498B4F00079FE44 /* Germania.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Germania.otf; sourceTree = "<group>"; };
 		CD6F199424933AC6005AE9B8 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		CD9FE1CB2490CA3300E94C72 /* Rolling Knight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rolling Knight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD54A1D92498B4DE0079FE44 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				CD54A1DA2498B4F00079FE44 /* Germania.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		CD6F199224933A1A005AE9B8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		CD9FE1CD2490CA3300E94C72 /* Rolling Knight */ = {
 			isa = PBXGroup;
 			children = (
+				CD54A1D92498B4DE0079FE44 /* font */,
 				CDCA069C2497CA580083C195 /* Audio */,
 				CD9FE1CE2490CA3300E94C72 /* AppDelegate.swift */,
 				CDCD038E2498576E0096E7BE /* Sks File */,
@@ -243,6 +254,7 @@
 				CDCD0396249864310096E7BE /* OptionScene.sks in Resources */,
 				CDCA06A12497CA750083C195 /* doorSound.m4a in Resources */,
 				CD9FE1DA2490CA3300E94C72 /* Main.storyboard in Resources */,
+				CD54A1DB2498B4F00079FE44 /* Germania.otf in Resources */,
 				CD2F128C249870B900E88E19 /* Level 2.sks in Resources */,
 				CD54A1D2249887490079FE44 /* Level 6.sks in Resources */,
 				CD9FE1D12490CA3300E94C72 /* GameScene.sks in Resources */,

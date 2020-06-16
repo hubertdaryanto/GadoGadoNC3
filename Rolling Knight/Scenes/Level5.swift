@@ -24,6 +24,7 @@ class Level5: SKScene {
     var health1: SKSpriteNode!
     var health2: SKSpriteNode!
     var health3: SKSpriteNode!
+    var enemy1: SKSpriteNode!
     var pauseButton: SKSpriteNode!
     let resumeButton = SKSpriteNode(imageNamed: "Play Button")
     let restartButton = SKSpriteNode(imageNamed: "restart_test")
@@ -42,6 +43,7 @@ class Level5: SKScene {
         health1 = (childNode(withName: "Health 1") as! SKSpriteNode)
         health2 = (childNode(withName: "Health 2") as! SKSpriteNode)
         health3 = (childNode(withName: "Health 3") as! SKSpriteNode)
+        enemy1 = (childNode(withName: "enemy") as! SKSpriteNode)
         tembok = (childNode(withName: "tembok") as! SKSpriteNode)
         pintu1 = (childNode(withName: "pintu 1") as! SKSpriteNode)
         pauseButton = (childNode(withName: "PauseButton") as! SKSpriteNode)
@@ -62,6 +64,7 @@ class Level5: SKScene {
                 
                 DispatchQueue.main.async {
                     self.updateBallLocation(data)
+                    self.updateEnemy1Function(data)
                 }
             }
         }
@@ -298,6 +301,13 @@ class Level5: SKScene {
         soundNode.run(SKAction.play())
         
     }
+    func updateEnemy1Function(_ motionData: CMDeviceMotion)
+    {
+        var moveX = CGFloat(motionData.attitude.pitch * 100)
+        var moveY = CGFloat(motionData.attitude.roll * 100)
+        enemy1.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
+        
+    }
 }
 
 extension Level5: SKPhysicsContactDelegate{
@@ -339,7 +349,7 @@ extension Level5: SKPhysicsContactDelegate{
                     {
                     node.run(SKAction.removeFromParent()
                     )
-                        pintu1.texture = SKTexture(imageNamed: "DoorOpen(key)")
+                        pintu1.texture = SKTexture(imageNamed: "Door(open)")
                                           pintu1.physicsBody = nil
                         soundNode4.autoplayLooped = false
                         if doorisopened == false
@@ -416,6 +426,24 @@ extension Level5: SKPhysicsContactDelegate{
         else if contactMask == PhysicsCategory.enemy | PhysicsCategory.jarum
         {
             print("enemy kena jarum")
+            if let node = contact.bodyA.node?.name == "enemy" ? contact.bodyA.node : contact.bodyB.node
+            {
+                enemylives = enemylives - 1
+                if enemylives == 0
+                {
+                node.run(SKAction.removeFromParent()
+                )
+                    pintu1.texture = SKTexture(imageNamed: "Door(open)")
+                                      pintu1.physicsBody = nil
+                    soundNode4.autoplayLooped = false
+                    if doorisopened == false
+                    {
+                    addChild(soundNode4)
+                    doorisopened = true
+                    }
+                    soundNode4.run(SKAction.play())
+                }
+            }
 
         }
         else if contactMask == PhysicsCategory.player | PhysicsCategory.pintu

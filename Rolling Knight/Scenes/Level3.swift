@@ -64,6 +64,7 @@ class Level3: SKScene {
                 
                 DispatchQueue.main.async {
                     self.updateBallLocation(data)
+                    self.updateEnemy1Function(data)
                 }
             }
         }
@@ -193,6 +194,14 @@ class Level3: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    func updateEnemy1Function(_ motionData: CMDeviceMotion)
+    {
+        var moveX = CGFloat(motionData.attitude.pitch * 100)
+        var moveY = CGFloat(motionData.attitude.roll * 100)
+        enemy.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
+        
     }
     
     func pauseTheGame()
@@ -341,7 +350,7 @@ extension Level3: SKPhysicsContactDelegate{
                     {
                     node.run(SKAction.removeFromParent()
                     )
-                        pintu1.texture = SKTexture(imageNamed: "DoorOpen(key)")
+                        pintu1.texture = SKTexture(imageNamed: "Door(open)")
                                           pintu1.physicsBody = nil
                         soundNode4.autoplayLooped = false
                         if doorisopened == false

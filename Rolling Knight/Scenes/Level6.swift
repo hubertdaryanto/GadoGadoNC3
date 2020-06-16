@@ -73,12 +73,19 @@ class Level6: SKScene {
                 
                 DispatchQueue.main.async {
                     self.updateBallLocation(data)
+                    self.updateEnemy1Function(data)
                 }
             }
         }
     }
     
-    
+    func updateEnemy1Function(_ motionData: CMDeviceMotion)
+    {
+        var moveX = CGFloat(motionData.attitude.pitch * 100)
+        var moveY = CGFloat(motionData.attitude.roll * 100)
+        enemy1.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
+        enemy3.physicsBody!.applyForce(CGVector(dx: moveX, dy: moveY))
+    }
     func setupPauseScreen()
        {
            resumeButton.position = CGPoint(x: 0, y: 0)
@@ -394,7 +401,7 @@ extension Level6: SKPhysicsContactDelegate{
                 }
                 if enemy1died && enemy2died && enemy3died
                 {
-                    pintu1.texture = SKTexture(imageNamed: "DoorOpen(key)")
+                    pintu1.texture = SKTexture(imageNamed: "Door(open)")
                                       pintu1.physicsBody = nil
                     soundNode4.autoplayLooped = false
                     if doorisopened == false
